@@ -5,6 +5,8 @@
 #define PERSIST_KEY_DARK_BACKGROUND 2
 #define PERSIST_KEY_PREVIEW_SPECIES 3
 #define PREVIEW_INTERVAL_MS 3000
+#define PLATE_LOAD_RETRY_MS 150
+#define PLATE_LOAD_MAX_RETRIES 12
 
 typedef struct {
   uint32_t color_resource_id;
@@ -25,10 +27,13 @@ static bool s_color_spider = true;
 static bool s_dark_background = false;
 static bool s_preview_species = false;
 static AppTimer *s_preview_timer;
+static AppTimer *s_load_retry_timer;
+static int s_load_retry_count;
 static char s_time_buffer[16], s_date_buffer[24];
 
 static void display_spider(int index);
 static int daily_spider(int32_t day);
+static void show_plate_for_mode(void);
 
 static GColor text_color(void) {
   return s_dark_background ? GColorWhite : GColorBlack;
@@ -70,9 +75,7 @@ static void update_preview_timer(void) {
     s_preview_timer = NULL;
   }
   if (!s_preview_species) {
-    if (s_day >= 0) {
-      display_spider(daily_spider(s_day));
-    }
+    show_plate_for_mode();
     return;
   }
   s_preview_timer = app_timer_register(PREVIEW_INTERVAL_MS, preview_timer_callback, NULL);
@@ -97,24 +100,71 @@ static int daily_spider(int32_t day) {
   return (int)(((uint32_t)day * 17u + 31u) % NUM_SPIDER);
 }
 
-static void display_spider(int index) {
-  if (index < 0 || index >= NUM_SPIDER) {
+static GBitmap *load_plate_bitmap(int index) {
+  uint32_t primary = spider_resource_id(index);
+  uint32_t alternate = s_color_spider ? SPIDER[index].mono_resource_id
+                                      : SPIDER[index].color_resource_id;
+  GBitmap *bitmap = gbitmap_create_with_resource(primary);
+  if (!bitmap && alternate != primary) {
+    bitmap = gbitmap_create_with_resource(alternate);
+  }
+  return bitmap;
+}
+
+static void cancel_load_retry(void) {
+  if (s_load_retry_timer) {
+    app_timer_cancel(s_load_retry_timer);
+    s_load_retry_timer = NULL;
+  }
+}
+
+static void load_retry_callback(void *context) {
+  int index = (int)(intptr_t)context;
+  s_load_retry_timer = NULL;
+  if (index < 0 || index >= NUM_SPIDER || index != s_spider_index) {
     return;
   }
-  uint32_t resource_id = spider_resource_id(index);
-  GBitmap *replacement = gbitmap_create_with_resource(resource_id);
+  GBitmap *replacement = load_plate_bitmap(index);
   if (!replacement) {
+    if (s_load_retry_count < PLATE_LOAD_MAX_RETRIES) {
+      s_load_retry_count++;
+      s_load_retry_timer = app_timer_register(PLATE_LOAD_RETRY_MS, load_retry_callback,
+                                            (void *)(intptr_t)index);
+    }
     return;
   }
+  s_load_retry_count = 0;
   bitmap_layer_set_bitmap(s_spider_layer, NULL);
   if (s_spider_bitmap) {
     gbitmap_destroy(s_spider_bitmap);
   }
   s_spider_bitmap = replacement;
-  s_spider_index = index;
   bitmap_layer_set_bitmap(s_spider_layer, s_spider_bitmap);
+}
+
+static void display_spider(int index) {
+  if (index < 0 || index >= NUM_SPIDER) {
+    return;
+  }
   text_layer_set_text(s_common_layer, SPIDER[index].common);
   text_layer_set_text(s_scientific_layer, SPIDER[index].scientific);
+  s_spider_index = index;
+  cancel_load_retry();
+  s_load_retry_count = 0;
+  load_retry_callback((void *)(intptr_t)index);
+}
+
+static void show_plate_for_mode(void) {
+  int index;
+  if (s_preview_species) {
+    index = (s_spider_index >= 0) ? s_spider_index : 0;
+  } else if (s_day >= 0) {
+    index = daily_spider(s_day);
+  } else {
+    time_t now = time(NULL);
+    index = daily_spider(absolute_day(localtime(&now)));
+  }
+  display_spider(index);
 }
 
 static void update_display(struct tm *tick) {
@@ -234,8 +284,10 @@ static void init(void) {
   time_t now = time(NULL);
   struct tm *tick = localtime(&now);
   update_display(tick);
+  if (s_spider_index < 0) {
+    show_plate_for_mode();
+  }
   if (s_preview_species) {
-    display_spider(0);
     update_preview_timer();
   }
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
@@ -246,6 +298,7 @@ static void deinit(void) {
     app_timer_cancel(s_preview_timer);
     s_preview_timer = NULL;
   }
+  cancel_load_retry();
   tick_timer_service_unsubscribe();
   app_message_deregister_callbacks();
   if (s_spider_bitmap) {

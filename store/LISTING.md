@@ -26,6 +26,16 @@ Fork of the Fish Time watchface pattern; distinct app UUID so it installs beside
 
 Open source. Illustrations are user-supplied field-guide style plates, processed for Pebble’s 64-color palette.
 
+## Release notes (0.1.3)
+
+- Family names always show even if the plate bitmap is slow to load
+- Color/mono fallback per plate; retries bitmap load after install
+- Init matches Fish Time: daily plate loads immediately on launch
+
+## Release notes (0.1.1)
+
+- Fix blank face on launch in daily (midnight) mode — family plate and labels show immediately
+
 ## Release notes (0.1.0)
 
 - Initial release: 71 families, color + mono, preview cycle, dark background option
