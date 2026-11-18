@@ -233,12 +233,10 @@ static void init(void) {
 
   time_t now = time(NULL);
   struct tm *tick = localtime(&now);
-  s_day = absolute_day(tick);
+  update_display(tick);
   if (s_preview_species) {
     display_spider(0);
     update_preview_timer();
-  } else {
-    update_display(tick);
   }
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
 }
