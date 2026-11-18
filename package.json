@@ -12,7 +12,7 @@
     "watchface"
   ],
   "pebble": {
-    "displayName": "Spinneret",
+    "displayName": "Spider Fam",
     "uuid": "1262f334-fdac-4839-b251-16e5ef5721a2",
     "sdkVersion": "3",
     "enableMultiJS": true,

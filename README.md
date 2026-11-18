@@ -1,17 +1,17 @@
-# Spinneret
+# Spider Fam
 
-Spider families of North America (store name **Spinneret**).
+North American spider-family field-guide watchface for Pebble Time 2.
 
 Pebble Time 2 watchface cloned from [Fish Time](../fish-of-new-england-pebble-watchface): daily rotation through spider families recorded in North America, with family common name and scientific name (family) below the plate.
 
-- **Preview all families (3 sec)** — default on first install: cycles through all 71 every 3 seconds; turn off in settings for one family per day at midnight.
-- Daily mode: 71-day shuffled-looking cycle (no repeat until each family has appeared once).
+- **One family per day** at midnight (default): 71-day shuffled-looking cycle (no repeat until each family has appeared once).
+- Optional **Preview all families (3 sec)** in settings for a quick tour of every plate.
 - **Color illustrations** vs **grayscale plates**, and light or dark background, via Clay settings (same pattern as Fish Time).
 - Uses a distinct app UUID so it does not overwrite Fish Time on the watch.
 
 Build: `pebble clean && pebble build` then `pebble install --cloudpebble`.
 
-**Rebble store:** app name **Spinneret** — listing copy and assets in [`store/LISTING.md`](store/LISTING.md); regenerate icons/banner/screenshots with `python3 scripts/make_store_assets.py`.
+**Rebble store:** listing copy and assets in [`store/LISTING.md`](store/LISTING.md); regenerate icons/banner/screenshots with `python3 scripts/make_store_assets.py`.
 
 ## Assets
 

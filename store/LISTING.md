@@ -1,10 +1,10 @@
-# Rebble App Store — Spinneret
+# Rebble App Store — Spider Fam
 
 Portal: [dev-portal.rebble.io](https://dev-portal.rebble.io) · Category: **Watchfaces**
 
 ## Title
 
-**Spinneret**
+**Spider Fam**
 
 ## Short description (≤ 250 chars)
 
@@ -12,13 +12,13 @@ Portal: [dev-portal.rebble.io](https://dev-portal.rebble.io) · Category: **Watc
 
 ## Full description (paste into store)
 
-Spinneret is a field-guide watchface for **Pebble Time 2 (emery)**: one illustration per spider **family** found in North America, with common and scientific names under the plate and the clock below.
+Spider Fam is a field-guide watchface for **Pebble Time 2 (emery)**: one illustration per spider **family** found in North America, with common and scientific names under the plate and the clock below.
 
 **71 families** — from jumping spiders and orb-weavers to tarantulas and sheetweavers — each as a cropped plate (no stamped label text).
 
 **Art:** full **color** RGB plates or **grayscale** “museum print” style. **White or black** background via phone settings.
 
-**Rotation:** default **Preview all families (3 sec)** cycles the full set on your wrist; turn off for **one family per day** at midnight (71-day shuffled cycle, no repeats within a cycle).
+**Rotation:** **one family per day** at midnight (71-day shuffled cycle, no repeats within a cycle). Optional **Preview all families (3 sec)** in settings.
 
 **Settings (Clay):** Color illustrations, Preview cycle, Background.
 
@@ -44,7 +44,7 @@ Open source. Illustrations are user-supplied field-guide style plates, processed
 
 ## PBW
 
-Build: `pebble build` → `build/spinneret-v0.1.0.pbw` (see `store/releases/`).
+Build: `pebble build` → `build/spider-fam-v0.1.0.pbw` (see `store/releases/`).
 
 ## UUID
 
@@ -56,7 +56,7 @@ Build: `pebble build` → `build/spinneret-v0.1.0.pbw` (see `store/releases/`).
 pebble login
 pebble publish --non-interactive \
   --description "71 spider family plates for Pebble Time 2 — color, grayscale, 3s preview or daily." \
-  --release-notes "Initial Spinneret release." \
+  --release-notes "Initial Spider Fam release." \
   --category watchfaces
 ```
 

@@ -88,7 +88,7 @@ def make_banner() -> Image.Image:
     im = im.resize((320, int(320 * im.height / im.width)), Image.Resampling.LANCZOS)
     banner.paste(im, (380, 20), im)
 
-    draw.text((32, 48), "Spinneret", fill=(245, 240, 232), font=title_font)
+    draw.text((32, 48), "Spider Fam", fill=(245, 240, 232), font=title_font)
     draw.text((32, 120), "71 spider families · Pebble Time 2", fill=(180, 175, 168), font=sub_font)
     draw.text((32, 155), "Field-guide plates on your wrist", fill=(140, 135, 128), font=sub_font)
     draw.rectangle((32, 220, 340, 224), fill=(120, 90, 160))

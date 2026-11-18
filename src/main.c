@@ -228,7 +228,7 @@ static void init(void) {
   if (persist_exists(PERSIST_KEY_PREVIEW_SPECIES)) {
     s_preview_species = persist_read_bool(PERSIST_KEY_PREVIEW_SPECIES);
   } else {
-    s_preview_species = true;
+    s_preview_species = false;
   }
 
   time_t now = time(NULL);

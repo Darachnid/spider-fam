@@ -1,7 +1,7 @@
 module.exports = [
   {
     type: "heading",
-    defaultValue: "Spinneret"
+    defaultValue: "Spider Fam"
   },
   {
     type: "text",
@@ -22,7 +22,7 @@ module.exports = [
     label: "Preview all families (3 sec)",
     description:
       "Advances through each family every 3 seconds (ignores daily rotation).",
-    defaultValue: true
+    defaultValue: false
   },
   {
     type: "select",
