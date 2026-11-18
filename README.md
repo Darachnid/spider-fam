@@ -38,3 +38,5 @@ Open [http://127.0.0.1:9876/preview/index.html](http://127.0.0.1:9876/preview/in
 `spider_catalog.csv` drives `package.json` resources and `src/spider_table.inc`.
 
 Fork/adaptation of Fish Time. Illustrations are field-guide style family plates (user-provided assets).
+
+Repository: https://github.com/Darachnid/spider-fam
