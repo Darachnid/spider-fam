@@ -8,7 +8,7 @@ Portal: [dev-portal.rebble.io](https://dev-portal.rebble.io) · Category: **Watc
 
 ## Short description (≤ 250 chars)
 
-71 North American spider-family plates on Pebble Time 2—color or grayscale, optional 3s preview or daily rotation.
+Daily spider-family field guide on your wrist: 71 North American families, color or grayscale plates, optional 3-second preview. Pebble Time 2.
 
 ## Full description (paste into store)
 
@@ -40,7 +40,13 @@ Open source. Illustrations are user-supplied field-guide style plates, processed
 | `store/icon_48x48.png` | Compact icon |
 | `store/watch_menu_icon_25.png` | Locker / menu reference (also `resources/images/icon.png` in .pbw) |
 | `store/banner_720x320.png` | Store header banner |
-| `store/screenshots/emery_*.png` | Emery screenshots (200×228) — upload under **emery** |
+| `store/screenshots/emery_color_salticidae.png` | Screenshot — color, jumping spiders |
+| `store/screenshots/emery_color_lycosidae.png` | Screenshot — color, wolf spiders |
+| `store/screenshots/emery_color_theraphosidae.png` | Screenshot — color, tarantulas |
+| `store/screenshots/emery_mono_salticidae.png` | Screenshot — grayscale |
+| `store/screenshots/emery_dark_araneidae.png` | Screenshot — dark background |
+
+Upload all five under **emery** on the dev portal (native 200×228 PNG).
 
 ## PBW
 

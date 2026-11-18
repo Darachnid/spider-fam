@@ -11,7 +11,17 @@ Pebble Time 2 watchface cloned from [Fish Time](../fish-of-new-england-pebble-wa
 
 Build: `pebble clean && pebble build` then `pebble install --cloudpebble`.
 
-**Rebble store:** listing copy and assets in [`store/LISTING.md`](store/LISTING.md); regenerate icons/banner/screenshots with `python3 scripts/make_store_assets.py`.
+## Screenshots (emery · 200×228)
+
+| Color | Grayscale | Dark |
+| --- | --- | --- |
+| ![Jumping spiders](store/screenshots/emery_color_salticidae.png) | ![Jumping spiders mono](store/screenshots/emery_mono_salticidae.png) | ![Orb-weavers dark](store/screenshots/emery_dark_araneidae.png) |
+| ![Wolf spiders](store/screenshots/emery_color_lycosidae.png) | | |
+| ![Tarantulas](store/screenshots/emery_color_theraphosidae.png) | | |
+
+Store banner: `store/banner_720x320.png`
+
+**Rebble store:** copy in [`store/LISTING.md`](store/LISTING.md). Regenerate with `python3 scripts/make_store_assets.py`.
 
 ## Assets
 
