@@ -11,6 +11,8 @@ Pebble Time 2 watchface cloned from [Fish Time](../fish-of-new-england-pebble-wa
 
 Build: `pebble clean && pebble build` then `pebble install --cloudpebble`.
 
+**Rebble store:** app name **Spinneret** — listing copy and assets in [`store/LISTING.md`](store/LISTING.md); regenerate icons/banner/screenshots with `python3 scripts/make_store_assets.py`.
+
 ## Assets
 
 Source illustrations are copied into `originals/` when you run the image script. Pebble-ready bitmaps live in `resources/images/color/` and `resources/images/mono/` (referenced in `package.json` as `images/color/` …). Full sources are kept under `resources/images/reference/`.
