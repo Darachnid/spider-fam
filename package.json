@@ -1,0 +1,754 @@
+{
+  "name": "spider-families-north-america-pebble-watchface",
+  "author": "Darachnid",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@rebble/clay": "^1.1.0"
+  },
+  "keywords": [
+    "pebble-app",
+    "spiders",
+    "watchface"
+  ],
+  "pebble": {
+    "displayName": "Spinneret",
+    "uuid": "1262f334-fdac-4839-b251-16e5ef5721a2",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "capabilities": [
+      "configurable"
+    ],
+    "messageKeys": [
+      "ColorSpider",
+      "DarkBackground",
+      "PreviewCycle"
+    ],
+    "targetPlatforms": [
+      "emery"
+    ],
+    "watchapp": {
+      "watchface": true
+    },
+    "resources": {
+      "media": [
+        {
+          "type": "bitmap",
+          "name": "MENU_ICON",
+          "file": "images/icon.png",
+          "menuIcon": true
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_AGELENIDAE",
+          "file": "images/color/agelenidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_AGELENIDAE",
+          "file": "images/mono/agelenidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_AMAUROBIIDAE",
+          "file": "images/color/amaurobiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_AMAUROBIIDAE",
+          "file": "images/mono/amaurobiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_AMPHINECTIDAE",
+          "file": "images/color/amphinectidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_AMPHINECTIDAE",
+          "file": "images/mono/amphinectidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_ANAPIDAE",
+          "file": "images/color/anapidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_ANAPIDAE",
+          "file": "images/mono/anapidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_ANTRODIAETIDAE",
+          "file": "images/color/antrodiaetidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_ANTRODIAETIDAE",
+          "file": "images/mono/antrodiaetidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_ANYPHAENIDAE",
+          "file": "images/color/anyphaenidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_ANYPHAENIDAE",
+          "file": "images/mono/anyphaenidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_ARANEIDAE",
+          "file": "images/color/araneidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_ARANEIDAE",
+          "file": "images/mono/araneidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_ATYPIDAE",
+          "file": "images/color/atypidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_ATYPIDAE",
+          "file": "images/mono/atypidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_CAPONIIDAE",
+          "file": "images/color/caponiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_CAPONIIDAE",
+          "file": "images/mono/caponiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_CITHAERONIDAE",
+          "file": "images/color/cithaeronidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_CITHAERONIDAE",
+          "file": "images/mono/cithaeronidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_CLUBIONIDAE",
+          "file": "images/color/clubionidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_CLUBIONIDAE",
+          "file": "images/mono/clubionidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_CORINNIDAE",
+          "file": "images/color/corinnidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_CORINNIDAE",
+          "file": "images/mono/corinnidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_CTENIDAE",
+          "file": "images/color/ctenidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_CTENIDAE",
+          "file": "images/mono/ctenidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_CTENIZIDAE",
+          "file": "images/color/ctenizidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_CTENIZIDAE",
+          "file": "images/mono/ctenizidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_CYBAEIDAE",
+          "file": "images/color/cybaeidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_CYBAEIDAE",
+          "file": "images/mono/cybaeidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_DEINOPIDAE",
+          "file": "images/color/deinopidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_DEINOPIDAE",
+          "file": "images/mono/deinopidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_DESIDAE",
+          "file": "images/color/desidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_DESIDAE",
+          "file": "images/mono/desidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_DICTYNIDAE",
+          "file": "images/color/dictynidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_DICTYNIDAE",
+          "file": "images/mono/dictynidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_DIGUETIDAE",
+          "file": "images/color/diguetidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_DIGUETIDAE",
+          "file": "images/mono/diguetidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_DIPLURIDAE",
+          "file": "images/color/dipluridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_DIPLURIDAE",
+          "file": "images/mono/dipluridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_DYSDERIDAE",
+          "file": "images/color/dysderidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_DYSDERIDAE",
+          "file": "images/mono/dysderidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_EUCTENIZIDAE",
+          "file": "images/color/euctenizidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_EUCTENIZIDAE",
+          "file": "images/mono/euctenizidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_EUTICHURIDAE",
+          "file": "images/color/eutichuridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_EUTICHURIDAE",
+          "file": "images/mono/eutichuridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_FILISTATIDAE",
+          "file": "images/color/filistatidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_FILISTATIDAE",
+          "file": "images/mono/filistatidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_GNAPHOSIDAE",
+          "file": "images/color/gnaphosidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_GNAPHOSIDAE",
+          "file": "images/mono/gnaphosidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_HAHNIIDAE",
+          "file": "images/color/hahniidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_HAHNIIDAE",
+          "file": "images/mono/hahniidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_HERSILIIDAE",
+          "file": "images/color/hersiliidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_HERSILIIDAE",
+          "file": "images/mono/hersiliidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_HOMALONYCHIDAE",
+          "file": "images/color/homalonychidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_HOMALONYCHIDAE",
+          "file": "images/mono/homalonychidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_HYPOCHILIDAE",
+          "file": "images/color/hypochilidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_HYPOCHILIDAE",
+          "file": "images/mono/hypochilidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_LEPTONETIDAE",
+          "file": "images/color/leptonetidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_LEPTONETIDAE",
+          "file": "images/mono/leptonetidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_LINYPHIIDAE",
+          "file": "images/color/linyphiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_LINYPHIIDAE",
+          "file": "images/mono/linyphiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_LIOCRANIDAE",
+          "file": "images/color/liocranidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_LIOCRANIDAE",
+          "file": "images/mono/liocranidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_LYCOSIDAE",
+          "file": "images/color/lycosidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_LYCOSIDAE",
+          "file": "images/mono/lycosidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_MECICOBOTHRIIDAE",
+          "file": "images/color/mecicobothriidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_MECICOBOTHRIIDAE",
+          "file": "images/mono/mecicobothriidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_MIMETIDAE",
+          "file": "images/color/mimetidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_MIMETIDAE",
+          "file": "images/mono/mimetidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_MITURGIDAE",
+          "file": "images/color/miturgidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_MITURGIDAE",
+          "file": "images/mono/miturgidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_MYSMENIDAE",
+          "file": "images/color/mysmenidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_MYSMENIDAE",
+          "file": "images/mono/mysmenidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_NEMESIIDAE",
+          "file": "images/color/nemesiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_NEMESIIDAE",
+          "file": "images/mono/nemesiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_NEPHILIDAE",
+          "file": "images/color/nephilidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_NEPHILIDAE",
+          "file": "images/mono/nephilidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_NESTICIDAE",
+          "file": "images/color/nesticidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_NESTICIDAE",
+          "file": "images/mono/nesticidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_OCHYROCERATIDAE",
+          "file": "images/color/ochyroceratidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_OCHYROCERATIDAE",
+          "file": "images/mono/ochyroceratidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_OECOBIIDAE",
+          "file": "images/color/oecobiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_OECOBIIDAE",
+          "file": "images/mono/oecobiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_OONOPIDAE",
+          "file": "images/color/oonopidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_OONOPIDAE",
+          "file": "images/mono/oonopidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_OXYOPIDAE",
+          "file": "images/color/oxyopidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_OXYOPIDAE",
+          "file": "images/mono/oxyopidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_PHILODROMIDAE",
+          "file": "images/color/philodromidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_PHILODROMIDAE",
+          "file": "images/mono/philodromidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_PHOLCIDAE",
+          "file": "images/color/pholcidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_PHOLCIDAE",
+          "file": "images/mono/pholcidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_PHRUROLITHIDAE",
+          "file": "images/color/phrurolithidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_PHRUROLITHIDAE",
+          "file": "images/mono/phrurolithidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_PIMOIDAE",
+          "file": "images/color/pimoidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_PIMOIDAE",
+          "file": "images/mono/pimoidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_PISAURIDAE",
+          "file": "images/color/pisauridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_PISAURIDAE",
+          "file": "images/mono/pisauridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_PLECTREURIDAE",
+          "file": "images/color/plectreuridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_PLECTREURIDAE",
+          "file": "images/mono/plectreuridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_PRODIDOMIDAE",
+          "file": "images/color/prodidomidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_PRODIDOMIDAE",
+          "file": "images/mono/prodidomidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_SALTICIDAE",
+          "file": "images/color/salticidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_SALTICIDAE",
+          "file": "images/mono/salticidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_SCYTODIDAE",
+          "file": "images/color/scytodidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_SCYTODIDAE",
+          "file": "images/mono/scytodidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_SEGESTRIIDAE",
+          "file": "images/color/segestriidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_SEGESTRIIDAE",
+          "file": "images/mono/segestriidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_SELENOPIDAE",
+          "file": "images/color/selenopidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_SELENOPIDAE",
+          "file": "images/mono/selenopidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_SICARIIDAE",
+          "file": "images/color/sicariidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_SICARIIDAE",
+          "file": "images/mono/sicariidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_SPARASSIDAE",
+          "file": "images/color/sparassidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_SPARASSIDAE",
+          "file": "images/mono/sparassidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_SYMPHYTOGNATHIDAE",
+          "file": "images/color/symphytognathidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_SYMPHYTOGNATHIDAE",
+          "file": "images/mono/symphytognathidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_TELEMIDAE",
+          "file": "images/color/telemidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_TELEMIDAE",
+          "file": "images/mono/telemidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_TETRAGNATHIDAE",
+          "file": "images/color/tetragnathidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_TETRAGNATHIDAE",
+          "file": "images/mono/tetragnathidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_THERAPHOSIDAE",
+          "file": "images/color/theraphosidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_THERAPHOSIDAE",
+          "file": "images/mono/theraphosidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_THERIDIIDAE",
+          "file": "images/color/theridiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_THERIDIIDAE",
+          "file": "images/mono/theridiidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_THERIDIOSOMATIDAE",
+          "file": "images/color/theridiosomatidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_THERIDIOSOMATIDAE",
+          "file": "images/mono/theridiosomatidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_THOMISIDAE",
+          "file": "images/color/thomisidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_THOMISIDAE",
+          "file": "images/mono/thomisidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_TITANOECIDAE",
+          "file": "images/color/titanoecidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_TITANOECIDAE",
+          "file": "images/mono/titanoecidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_TRACHELIDAE",
+          "file": "images/color/trachelidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_TRACHELIDAE",
+          "file": "images/mono/trachelidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_TRECHALEIDAE",
+          "file": "images/color/trechaleidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_TRECHALEIDAE",
+          "file": "images/mono/trechaleidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_TROGLORAPTORIDAE",
+          "file": "images/color/trogloraptoridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_TROGLORAPTORIDAE",
+          "file": "images/mono/trogloraptoridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_ULOBORIDAE",
+          "file": "images/color/uloboridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_ULOBORIDAE",
+          "file": "images/mono/uloboridae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_ZODARIIDAE",
+          "file": "images/color/zodariidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_ZODARIIDAE",
+          "file": "images/mono/zodariidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_COLOR_ZOROPSIDAE",
+          "file": "images/color/zoropsidae.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SPIDER_ZOROPSIDAE",
+          "file": "images/mono/zoropsidae.png"
+        }
+      ]
+    }
+  }
+}
